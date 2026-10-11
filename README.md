@@ -33,7 +33,7 @@ An Agent Skill for learning unfamiliar concepts through brief context, concrete 
 
 ## 安装到 Codex / Install in Codex
 
-此 skill 仅包含指令、示例与图标，无需安装运行依赖或填写 API 密钥。使用 Git 将仓库放入个人 skills 目录即可。
+此 skill 由指令、示例与图片资源组成，无需安装运行依赖或填写 API 密钥。使用 Git 将仓库放入个人 skills 目录即可。
 
 ### Windows（PowerShell）
 
