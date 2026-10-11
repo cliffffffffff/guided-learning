@@ -6,9 +6,21 @@ An Agent Skill for learning unfamiliar concepts through brief context, concrete 
 
 [Skill 指令](SKILL.md) · [教学示例](references/teaching-examples.md) · [设计来源](references/design-basis.md) · [MIT License](LICENSE)
 
+点击任意图解可查看原图。
+
+<p align="center">
+  <a href="assets/intro/01.png"><img src="assets/intro/01.png" alt="让 AI 陪你想明白：用具体情境搭桥，在推理与讲回中修补理解" width="360" /></a>
+  <a href="assets/intro/02.png"><img src="assets/intro/02.png" alt="创作初衷：给自己的思考留一点空间，从回答中找出遗漏的原因与条件" width="360" /></a>
+</p>
+
 ## 它如何帮助你 / How it helps
 
 默认节奏：**背景与情境 → 一次推理或讲回 → 定位缺口与解释 → 必要时修补和迁移**。根据你的基础与已有回答调整，不要求每次走完固定流程。
+
+<p align="center">
+  <a href="assets/intro/03.png"><img src="assets/intro/03.png" alt="学习节奏：从情境开始，逐步讲清楚，按需修补与迁移" width="360" /></a>
+  <a href="assets/intro/04.png"><img src="assets/intro/04.png" alt="互动示例：通过机会成本的解释，先保留正确部分，再修补关键理解缺口" width="360" /></a>
+</p>
 
 - **初次接触一个领域**：先解释必要术语，给出具体案例；抽象关系难以直观理解时，可用短寓言呈现，再说明其对应关系与边界。
 - **检验自己的理解**：用自己的话或简图讲清一条机制，检查是否只记住故事、遗漏因果关系或忽略关键条件；修补时只聚焦最影响判断的一处。
@@ -49,6 +61,11 @@ git clone https://github.com/cliffffffffff/guided-learning.git ~/.agents/skills/
 
 ## 使用示例 / Try it
 
+<p align="center">
+  <a href="assets/intro/05.png"><img src="assets/intro/05.png" alt="调用方法：用 $guided-learning 带我理解数据库索引，说出自己的基础与卡点" width="360" /></a>
+  <a href="assets/intro/06.png"><img src="assets/intro/06.png" alt="学习节奏由你决定：可以先示范、检查理解，或直接获得完整解释" width="360" /></a>
+</p>
+
 ```text
 用 $guided-learning 带我理解：为什么输电要提高电压？
 我是新手，先给必要背景和例子，再提出一个问题让我尝试。
@@ -76,7 +93,9 @@ I'm new to it. Give me a concrete example, then one question to reason through.
 guided-learning/
 ├── SKILL.md                         核心指令与触发范围
 ├── agents/openai.yaml               界面元数据与调用策略
-├── assets/icon.svg                  图标
+├── assets/
+│   ├── icon.svg                    图标
+│   └── intro/                      八张介绍图（01.png–08.png）与提示词、来源
 ├── references/
 │   ├── teaching-examples.md          寓言映射、推理、讲回修补和迁移示例
 │   └── design-basis.md               寓言、费曼式学习及研究证据边界
@@ -86,7 +105,16 @@ guided-learning/
 
 ## 设计依据与贡献 / Design and contributions
 
+创作初衷参考 Renx 发布于“启元洞见”的[《当 AI 代替人类承担“思考的阵痛”，它在如何重塑人类认知架构？》](https://mp.weixin.qq.com/s/7_ET-5fNRlcJKxtB4tkYBg)。我们希望在 AI 分担记忆、计算等任务时，仍为学习者保留尝试推理、检查依据和条件的空间；同时尊重用户的基础、意愿与学习节奏。
+
+<p align="center">
+  <a href="assets/intro/07.png"><img src="assets/intro/07.png" alt="认知卸载与认知投降：借助 AI 分担任务，同时保留自己的判断" width="360" /></a>
+  <a href="assets/intro/08.png"><img src="assets/intro/08.png" alt="寓言学习的启发：Amanda Askell 的个人用法，以及本技能按需讲清机制与边界的改编" width="360" /></a>
+</p>
+
 这是可调整的教学流程。寓言部分通过 `fable-writing` 技能，借鉴“数字生命卡兹克”发布的[《分享一个很实用的寓言故事prompt，5分钟帮你理解任何新概念。》](https://mp.weixin.qq.com/s/L1ISA0FvxY_7OR994RttWw)（文末署名：卡兹克、tashi）中的寓言写作 Prompt，将故事、概念映射和理解／迁移检验改编为按需使用、每轮一个核心任务的教学方式。
+
+该文章追溯的上游启发是 Anthropic 的 Amanda Askell 在 [Newcomer 访谈](https://podcast.newcomer.co/episode/amanda-askell-on-ai-consciousness-claude-amp-silicon-valleys-biggest-fear)（53:20 起）中的个人使用分享：先让寓言间接呈现概念，再在故事后揭晓和解释概念。本技能进一步加入短寓言的按需选择、机制与边界说明，以及推理、讲回或迁移检查。八张图的完整提示词与补充参考来源见 [图解制作记录](assets/intro/prompts.md)。
 
 同时借鉴费曼式学习中的解释、发现缺口与修补。这些都是设计启发；原文中的学习效果描述不构成本 skill 的实证依据。没有实证证明此 skill 能改善长期记忆或认知能力，流畅复述也不能代替新情境应用的证据。完整来源关系、费曼本人表述与流行四步法的区分，以及研究能支持的结论见 [设计来源与证据边界](references/design-basis.md)。
 
