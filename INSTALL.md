@@ -2,14 +2,14 @@
 
 用背景与具体情境搭桥，通过一次推理或用自己的话讲回发现理解缺口，再解释、修补，并按需换个情境检验应用。随时可以说“我完全不知道，先示范”或“直接讲完，不用提问”。
 
-[核心指令](SKILL.md) · [教学示例](references/teaching-examples.md) · [设计来源](references/design-basis.md) · [MIT 许可证](LICENSE) · [GitHub 图文介绍](https://github.com/cliffffffffff/guided-learning) · [SkillHub](https://skillhub.cn/skills/user_2d01d3cb/guided-learning)
+[核心指令](SKILL.md) · [教学示例](references/teaching-examples.md) · [寓言写作参考](references/fable-writing/SKILL.md) · [设计来源](references/design-basis.md) · [MIT 许可证](LICENSE) · [GitHub 图文介绍](https://github.com/cliffffffffff/guided-learning) · [SkillHub](https://skillhub.cn/skills/user_2d01d3cb/guided-learning)
 
 ## 通用格式与依赖
 
 - 核心为标准 `SKILL.md`：YAML 中保留通用字段 `name`、`description`、`license` 与字符串形式的 `metadata`；完整触发范围与教学流程在正文中。
 - 将目录命名为 `guided-learning`，并保留 `references/` 与 `SKILL.md` 的相对位置。参考文件由宿主的文件或技能资源接口按需读取。
 - `agents/openai.yaml` 与 `assets/icon.svg` 为可选的 OpenAI 界面资源；其他 agent 无需解释这些元数据，也无需安装 OpenAI 工具。
-- 技能本身无需 Python、Git、MCP 或 API 密钥。下文的 Git 命令是下载方式，发布脚本的 Python 是维护者工具；宿主模型服务与计费仍由所用 agent 决定。
+- 技能本身无需 Python、Git、MCP 或 API 密钥。可直接上传或导入准备好的 ZIP；下文的 Git 命令是可选的下载方式，宿主模型服务与计费仍由所用 agent 决定。
 - 基础讲解可在离线、纯文本环境运行。实时事实和拿不准的专业资料仍需查证；没有检索能力时会说明未核验，保留未知。单次或后台任务没有互动入口时，给完整示范，不模拟学习者作答。
 
 ## Codex
@@ -100,9 +100,9 @@ hermes skills list
 
 需要支持安装操作的 agent 才能执行此提示。只希望手动导入时，直接下载页面上的 ZIP。SkillHub 是分发渠道，最终的技能目录、启用和调用方式由接收它的 agent 决定。
 
-仓库更新与 SkillHub 已上传版本分别维护。维护者在仓库根目录运行 `python scripts/package_skill.py` 生成 `dist/guided-learning.zip`，然后在 SkillHub 发布对应版本。脚本不随 ZIP 分发；再次打包时使用新路径，例如 `python scripts/package_skill.py --output dist/guided-learning-1.1.0.zip`，保留既有文件。上传时保留原技能标识符，并让平台版本与 `SKILL.md` 中的 `metadata.version` 一致；生成 ZIP 本身不会更新平台。
+仓库更新与 SkillHub 已上传版本分别维护。使用准备好的轻量 ZIP 在 SkillHub 发布对应版本即可，无需运行打包脚本。上传时保留原技能标识符，并让平台版本与 `SKILL.md` 中的 `metadata.version` 一致；本包建议填写 `1.1.0`。
 
-发布包根目录包含 `SKILL.md`、两份 `references/`、`LICENSE`、可选的 `agents/openai.yaml` 与图标，以及由本说明生成的 `README.md`。完整介绍图通过 GitHub 查看，教学运行无需下载这些图片。
+发布包根目录包含 `SKILL.md`、教学示例、设计来源、`references/fable-writing/SKILL.md`、`LICENSE`、可选的 `agents/openai.yaml` 与图标，以及作为包内 `README.md` 的本说明。完整介绍图通过 GitHub 查看，教学运行无需下载这些图片。fable-writing 仅作为写作参考，不单独安装其关联技能，教学节奏以主 `SKILL.md` 为准。
 
 ## 其他 Agent 与纯聊天工具
 

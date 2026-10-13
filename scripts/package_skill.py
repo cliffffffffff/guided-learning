@@ -13,6 +13,7 @@ FILES = {
     "SKILL.md": "SKILL.md",
     "references/teaching-examples.md": "references/teaching-examples.md",
     "references/design-basis.md": "references/design-basis.md",
+    "references/fable-writing/SKILL.md": "references/fable-writing/SKILL.md",
     "LICENSE": "LICENSE",
     "agents/openai.yaml": "agents/openai.yaml",
     "assets/icon.svg": "assets/icon.svg",

@@ -47,13 +47,9 @@ An Agent Skill for learning unfamiliar concepts through brief context, concrete 
 
 ### SkillHub 与发布包
 
-技能已上架 [SkillHub：启发式学习](https://skillhub.cn/skills/user_2d01d3cb/guided-learning)。更新仓库不会自动替换 SkillHub 中已上传的版本；可用以下命令生成重新上传或导入 WorkBuddy 的轻量包：
+技能已上架 [SkillHub：启发式学习](https://skillhub.cn/skills/user_2d01d3cb/guided-learning)。准备好的轻量 ZIP 可直接上传到 SkillHub，或在 WorkBuddy 的“技能 → 添加技能 → 上传技能”中导入，无需运行打包脚本。更新仓库不会自动替换 SkillHub 中已上传的版本。
 
-```bash
-python scripts/package_skill.py
-```
-
-输出为 `dist/guided-learning.zip`，ZIP 根目录直接包含 `SKILL.md`、两份教学参考、MIT 许可证、可选的 OpenAI 元数据与图标，并以安装说明作为包内 `README.md`。介绍图片保留在本仓库展示，发布包使用在线链接查看图文介绍。此脚本仅用于维护者打包，需要 Python 3 标准库，不是使用技能的依赖。
+ZIP 根目录直接包含 `SKILL.md`、教学示例、设计来源、完整的 [fable-writing 参考文件](references/fable-writing/SKILL.md)、MIT 许可证、可选的 OpenAI 元数据与图标，并以安装说明作为包内 `README.md`。介绍图片保留在本仓库展示，发布包使用在线链接查看图文介绍。
 
 ## 使用示例 / Try it
 
@@ -94,7 +90,8 @@ guided-learning/
 │   └── intro/                       八张介绍图（01.png–08.png）与提示词、来源
 ├── references/
 │   ├── teaching-examples.md          寓言映射、推理、讲回修补和迁移示例
-│   └── design-basis.md               寓言、费曼式学习及研究证据边界
+│   ├── design-basis.md               寓言、费曼式学习及研究证据边界
+│   └── fable-writing/SKILL.md        原始寓言写作参考（按需读取）
 ├── README.md
 ├── INSTALL.md                       跨 Agent 安装、调用与兼容性说明
 ├── scripts/package_skill.py         维护者发布包生成工具（不进入 ZIP）
