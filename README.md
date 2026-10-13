@@ -2,9 +2,9 @@
 
 一个帮助你理解陌生专业知识的 Agent Skill：用背景与具体情境搭桥，通过一次推理或用自己的话讲回发现理解缺口，随后解释、修补，并在有价值时换个情境检验应用。
 
-An Agent Skill for learning unfamiliar concepts through brief context, concrete examples or optional fables, one reasoning or explain-back task, and feedback that identifies gaps. It follows the learner's language and switches to a complete explanation whenever requested.
+An Agent Skill for learning unfamiliar concepts through brief context, concrete examples or optional fables, one reasoning or explain-back task, and feedback that identifies gaps. The same instruction package can be loaded by Codex, WorkBuddy, Hermes, and other agents that support the Agent Skills format. It follows the learner's language and switches to a complete explanation whenever requested.
 
-[Skill 指令](SKILL.md) · [教学示例](references/teaching-examples.md) · [设计来源](references/design-basis.md) · [MIT License](LICENSE)
+[Skill 指令](SKILL.md) · [安装与兼容性](INSTALL.md) · [SkillHub](https://skillhub.cn/skills/user_2d01d3cb/guided-learning) · [教学示例](references/teaching-examples.md) · [设计来源](references/design-basis.md) · [MIT License](LICENSE)
 
 点击任意图解可查看原图。
 
@@ -31,33 +31,29 @@ An Agent Skill for learning unfamiliar concepts through brief context, concrete 
 
 适合希望理解概念、原理、机制和判断条件的学习请求。只查事实、赶时间或需要完成工作时，不强制进入教学流程。
 
-## 安装到 Codex / Install in Codex
+## 安装与兼容性 / Install across agents
 
-此 skill 由指令、示例与图片资源组成，无需安装运行依赖或填写 API 密钥。使用 Git 将仓库放入个人 skills 目录即可。
+核心包使用 [Agent Skills 标准](https://agentskills.io/specification)的 `SKILL.md` 与相对路径参考文件，无需安装教学运行依赖或填写 API 密钥。联网用于有需要时核验事实；无法联网时会明确保留未核验部分。
 
-### Windows（PowerShell）
+| Agent / 入口 | 安装方式 | 调用示例 |
+|---|---|---|
+| Codex | 将 `guided-learning` 放入 `~/.agents/skills/`，或用内置 skill-installer | `$guided-learning 带我理解数据库索引` |
+| WorkBuddy | 技能 → 添加技能 → 上传技能，导入 ZIP；也可使用 SkillHub 页面提供的 WorkBuddy 入口 | `请使用 guided-learning（启发式学习）带我理解数据库索引` |
+| Hermes | 放入当前配置的 skills 目录，或将共享 skills 目录加入 `skills.external_dirs` | `/guided-learning 带我理解数据库索引` |
+| 其他支持 Agent Skills 的 agent | 按其文档导入完整技能目录，保留 `SKILL.md` 与 `references/` 的相对位置 | 使用宿主的技能选择器或自然语言名称 |
+| 不支持技能加载的聊天工具 | 将 `SKILL.md` 正文放入本次会话指令；需要示例或来源时再附对应参考文件 | `按上面的启发式学习流程带我理解数据库索引` |
 
-```powershell
-$skillRoot = Join-Path $env:USERPROFILE '.agents/skills'
-New-Item -ItemType Directory -Force -Path $skillRoot | Out-Null
-git clone https://github.com/cliffffffffff/guided-learning.git (Join-Path $skillRoot 'guided-learning')
-```
+完整命令、Hermes 共享目录配置、SkillHub 安装提示与排查方法见 [安装与兼容性说明](INSTALL.md)。各宿主是否自动选择技能、如何导入和刷新，由对应产品决定；通用格式适配不等于已在每个版本中完成端到端验证。
 
-### macOS / Linux
+### SkillHub 与发布包
+
+技能已上架 [SkillHub：启发式学习](https://skillhub.cn/skills/user_2d01d3cb/guided-learning)。更新仓库不会自动替换 SkillHub 中已上传的版本；可用以下命令生成重新上传或导入 WorkBuddy 的轻量包：
 
 ```bash
-mkdir -p ~/.agents/skills
-git clone https://github.com/cliffffffffff/guided-learning.git ~/.agents/skills/guided-learning
+python scripts/package_skill.py
 ```
 
-也可以在 Codex 中让内置安装器处理：
-
-```text
-用 $skill-installer 安装 https://github.com/cliffffffffff/guided-learning
-仓库根目录里的 skill，名称为 guided-learning。
-```
-
-安装后用 `$guided-learning` 显式调用，也可由 Codex 根据你的学习请求自动选择。若新安装的 skill 未出现，重启 Codex。安装目录与发现方式见 [OpenAI 官方 skills 文档](https://learn.chatgpt.com/docs/build-skills)。
+输出为 `dist/guided-learning.zip`，ZIP 根目录直接包含 `SKILL.md`、两份教学参考、MIT 许可证、可选的 OpenAI 元数据与图标，并以安装说明作为包内 `README.md`。介绍图片保留在本仓库展示，发布包使用在线链接查看图文介绍。此脚本仅用于维护者打包，需要 Python 3 标准库，不是使用技能的依赖。
 
 ## 使用示例 / Try it
 
@@ -67,21 +63,21 @@ git clone https://github.com/cliffffffffff/guided-learning.git ~/.agents/skills/
 </p>
 
 ```text
-用 $guided-learning 带我理解：为什么输电要提高电压？
+请使用 guided-learning（启发式学习）带我理解：为什么输电要提高电压？
 我是新手，先给必要背景和例子，再提出一个问题让我尝试。
 ```
 
 ```text
-用 $guided-learning 带我理解数据库索引。我写过 SQL，但不清楚索引为何能加快查询。
+请使用 guided-learning 带我理解数据库索引。我写过 SQL，但不清楚索引为何能加快查询。
 ```
 
 ```text
-用 $guided-learning 帮我检查对机会成本的理解。我认为它就是选错以后少赚的钱。
+请使用 guided-learning 帮我检查对机会成本的理解。我认为它就是选错以后少赚的钱。
 请从我的解释中找出关键缺口，帮我修补，再按需换个情境检验。
 ```
 
 ```text
-Use $guided-learning to help me understand HTTP caching.
+Use the guided-learning skill to help me understand HTTP caching.
 I'm new to it. Give me a concrete example, then one question to reason through.
 ```
 
@@ -95,11 +91,13 @@ guided-learning/
 ├── agents/openai.yaml               界面元数据与调用策略
 ├── assets/
 │   ├── icon.svg                    图标
-│   └── intro/                      八张介绍图（01.png–08.png）与提示词、来源
+│   └── intro/                       八张介绍图（01.png–08.png）与提示词、来源
 ├── references/
 │   ├── teaching-examples.md          寓言映射、推理、讲回修补和迁移示例
 │   └── design-basis.md               寓言、费曼式学习及研究证据边界
 ├── README.md
+├── INSTALL.md                       跨 Agent 安装、调用与兼容性说明
+├── scripts/package_skill.py         维护者发布包生成工具（不进入 ZIP）
 └── LICENSE
 ```
 
