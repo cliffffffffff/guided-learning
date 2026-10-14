@@ -105,5 +105,5 @@ metadata:
 ## 按需参考
 
 - 需要校准案例与寓言选择、讲回纠错或直接示范时，读取 [teaching-examples.md](references/teaching-examples.md)。按当前情境改写，不照搬句式。
-- 需要进一步参考寓言叙事写法时，读取 [fable-writing 原始参考](references/fable-writing/SKILL.md)。只借鉴具体场景、角色行动、相互影响与后果；它作为资料随包提供，不需要另行安装或调用 `humanizer`。原文的输出格式与禁用清单不覆盖本技能的按需短寓言、每轮一个核心任务、先等待用户作答和直接答案出口。
+- 需要进一步参考寓言叙事写法时，读取 [fable-writing.md](references/fable-writing.md)。只借鉴具体场景、角色行动、相互影响与后果；它作为资料随包提供，不需要另行安装或调用 `humanizer`。原文的输出格式与禁用清单不覆盖本技能的按需短寓言、每轮一个核心任务、先等待用户作答和直接答案出口。
 - 需要说明寓言、费曼式讲回的设计来源或讨论学习研究时，读取 [design-basis.md](references/design-basis.md)，区分方法启发与实证结论。
