@@ -1,0 +1,18 @@
+{
+  "installation": "C:\\Users\\wildh\\.cc-switch\\skills\\guided-learning",
+  "codex_resolved_directory": "C:\\Users\\wildh\\.cc-switch\\skills\\guided-learning",
+  "version": "1.2.0",
+  "files_match": 8,
+  "sha256": {
+    "SKILL.md": "94409c21e6aa154b519b29cc8e767f510a5e3b4ddd4b88f94699917a32cc10a0",
+    "INSTALL.md": "d159c10def12097ba08e1236e8ebd38ce80e70d5a4a831704c908b269bff548e",
+    "LICENSE": "26e5010ec7c91a54a552e1f0e1e2ac48a565473a17e2e5cea7f630f7326de960",
+    "agents/openai.yaml": "7c2e34251d47f8c38ca7f7fe3089588806398fd08b07676fcd24f0ef03a47ba2",
+    "assets/icon.svg": "9be88f8dd4c5e658961515c71389eafd45142ffa68bcae58e8dcff57d178ed91",
+    "references/teaching-examples.md": "abb4b30f574b8b3bf4cc794fb1c1af47a14f36794d2a6042e64e7cb644e00260",
+    "references/design-basis.md": "3268e4b8f4389d1182fa06e03d57dcaec96dadd68b950987c2fc1710a1b0ba8f",
+    "references/fable-writing/SKILL.md": "ce9d4eea1e88cac3c73ca2d33a8af1269600dea92bfb189455e033678a3f4abc"
+  },
+  "original_backup": "C:\\Users\\wildh\\.codex\\visualizations\\2026\\10\\14\\01a13a99-e94a-7351-b9c6-671189e39b2f\\guided-learning-eval\\installed-original",
+  "trace_fixture_integrity": "all 42 prescribed input instances present"
+}

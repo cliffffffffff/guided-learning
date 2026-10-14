@@ -1,6 +1,6 @@
 # Guided Learning · 安装与兼容性
 
-用背景与具体情境搭桥，通过一次推理或用自己的话讲回发现理解缺口，再解释、修补，并按需换个情境检验应用。随时可以说“我完全不知道，先示范”或“直接讲完，不用提问”。
+用背景或示范搭桥，从一次推理或用自己的话讲回中发现具体缺口，再修补，并按意愿用不提示解法的新情境检验应用。区分提示后的同题表现与自主应用；随时可以说“我完全不知道，先示范”或“直接讲完，不用提问”。
 
 [核心指令](SKILL.md) · [教学示例](references/teaching-examples.md) · [寓言写作参考](references/fable-writing/SKILL.md) · [设计来源](references/design-basis.md) · [MIT 许可证](LICENSE) · [GitHub 图文介绍](https://github.com/cliffffffffff/guided-learning) · [SkillHub](https://skillhub.cn/skills/user_2d01d3cb/guided-learning)
 
@@ -100,7 +100,7 @@ hermes skills list
 
 需要支持安装操作的 agent 才能执行此提示。只希望手动导入时，直接下载页面上的 ZIP。SkillHub 是分发渠道，最终的技能目录、启用和调用方式由接收它的 agent 决定。
 
-仓库更新与 SkillHub 已上传版本分别维护。使用准备好的轻量 ZIP 在 SkillHub 发布对应版本即可，无需运行打包脚本。上传时保留原技能标识符，并让平台版本与 `SKILL.md` 中的 `metadata.version` 一致；本包建议填写 `1.1.0`。
+仓库更新与 SkillHub 已上传版本分别维护。使用准备好的轻量 ZIP 在 SkillHub 发布对应版本即可，无需运行打包脚本。上传时保留原技能标识符，并让平台版本与 `SKILL.md` 中的 `metadata.version` 一致；本包建议填写 `1.2.0`。
 
 发布包根目录包含 `SKILL.md`、教学示例、设计来源、`references/fable-writing/SKILL.md`、`LICENSE`、可选的 `agents/openai.yaml` 与图标，以及作为包内 `README.md` 的本说明。完整介绍图通过 GitHub 查看，教学运行无需下载这些图片。fable-writing 仅作为写作参考，不单独安装其关联技能，教学节奏以主 `SKILL.md` 为准。
 

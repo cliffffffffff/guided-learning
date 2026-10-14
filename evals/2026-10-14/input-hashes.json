@@ -1,0 +1,27 @@
+{
+  "installed-original": {
+    "agents/openai.yaml": "404cdb29e99d5c53dbb2281b1eaaa23c63eb18d62e4e25b6433fbd18f2f28ac8",
+    "assets/icon.svg": "9be88f8dd4c5e658961515c71389eafd45142ffa68bcae58e8dcff57d178ed91",
+    "INSTALL.md": "c4cd5391ee4b3352e2ede1607b5f8bad760fad4b342cc95788321a76ff5103d7",
+    "LICENSE": "26e5010ec7c91a54a552e1f0e1e2ac48a565473a17e2e5cea7f630f7326de960",
+    "references/design-basis.md": "4026409e3cb0ca489b0c649c3c179bee3a750126fe15001c44e365c9fff03fc7",
+    "references/teaching-examples.md": "999a56b3f5726769cd9cd296fe24a1d1f63323a0b68aeb9211caed33238d008a",
+    "SKILL.md": "04b24e67780f9b3cf280bf5f1ea389e533e72e720409993ccaef02696869c6c8"
+  },
+  "workspace-original": {
+    "agents/openai.yaml": "404cdb29e99d5c53dbb2281b1eaaa23c63eb18d62e4e25b6433fbd18f2f28ac8",
+    "assets/icon.svg": "9be88f8dd4c5e658961515c71389eafd45142ffa68bcae58e8dcff57d178ed91",
+    "INSTALL.md": "1325a7c76adf1e7ae0744fc15bcfa40c43e2f7a5610543912fa0d8fa8512dd5b",
+    "LICENSE": "26e5010ec7c91a54a552e1f0e1e2ac48a565473a17e2e5cea7f630f7326de960",
+    "README.md": "844f2f80296266021609bebb3ea03e4525c8a9d187e2d85112b0be2d2f32ae3c",
+    "references/design-basis.md": "efe1a1eebf0adf84a96db1738c6489ef8d8def64d11da0ee1eff881e05d6c05c",
+    "references/fable-writing/SKILL.md": "ce9d4eea1e88cac3c73ca2d33a8af1269600dea92bfb189455e033678a3f4abc",
+    "references/teaching-examples.md": "999a56b3f5726769cd9cd296fe24a1d1f63323a0b68aeb9211caed33238d008a",
+    "SKILL.md": "5d5fc67689e235281439257093ee38d672e6834e42c1ddfae88039cca81da006"
+  },
+  "revised-under-test": {
+    "SKILL.md": "94409c21e6aa154b519b29cc8e767f510a5e3b4ddd4b88f94699917a32cc10a0",
+    "references/teaching-examples.md": "abb4b30f574b8b3bf4cc794fb1c1af47a14f36794d2a6042e64e7cb644e00260",
+    "references/design-basis.md": "3268e4b8f4389d1182fa06e03d57dcaec96dadd68b950987c2fc1710a1b0ba8f"
+  }
+}

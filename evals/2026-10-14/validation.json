@@ -1,0 +1,20 @@
+{
+  "skill_version": "1.2.0",
+  "description_characters": 49,
+  "ui_description_characters": 33,
+  "checked_local_links": 49,
+  "single_turn_cases": 6,
+  "trajectories": 3,
+  "trajectory_turns": 10,
+  "held_out_cases": 4,
+  "fable_reference_unchanged_sha256": "ce9d4eea1e88cac3c73ca2d33a8af1269600dea92bfb189455e033678a3f4abc",
+  "quick_validate": "passed for workspace, installation, and Codex symlink",
+  "utf8_and_yaml": "passed",
+  "relative_links": "passed",
+  "behaviour_response_count": {
+    "ordinary": 6,
+    "original_skill": 16,
+    "revised_skill": 20,
+    "total": 42
+  }
+}
